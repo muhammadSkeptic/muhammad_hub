@@ -1,0 +1,52 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+
+/*
+		دزدی بدون ذکر منبع حرام است
+حتی شما دوست عزیز
+طراحی توسط محمد 
+muhammadesteghamat16@gmail.com
+https://www.T.me/innocent_god
+*/
+
+/* BG */
+
+	#bg {
+		body.is-preload & {
+			&:before {
+				background-color: transparent;
+			}
+		}
+	}
+
+/* Header */
+
+	#header {
+		body.is-preload & {
+			> * {
+				opacity: 1;
+			}
+
+			@include vendor('filter', 'none');
+
+			.content {
+				.inner {
+					max-height: none;
+					padding: 3rem 2rem;
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+/* Main */
+
+	#main {
+		article {
+			opacity: 1;
+			margin: (_size(element-margin) * 2) 0 0 0;
+		}
+	}
