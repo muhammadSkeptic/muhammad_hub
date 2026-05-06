@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمایش تاریخ و ساعت</title>
+    <style>
+        #datetime {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function updateDateTime() {
+            var now = new Date();
+            var options = { weekday: 'long', month: 'long', day: 'numeric' };
+            var persianDate = now.toLocaleDateString('fa-IR');
+            var time = now.toLocaleTimeString('en');
+            
+            document.getElementById('datetime').innerHTML = persianDate + ' ' + time;
+        }
+
+        setInterval(updateDateTime, 1000);
+    </script>
+</head>
+<body onload="updateDateTime()">
+    <div id="datetime"></div>
+</body>
+</html>

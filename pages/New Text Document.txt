@@ -1,0 +1,28 @@
+<style>
+							#datetime {
+								font-size: 16px;
+								font-weight: bold;
+								position: fixed;
+								top: 10px;
+								left: 10px;
+								
+								padding: 5px 10px;
+								border-radius: 5px;
+								z-index: 1000;
+								color: white; /* تغییر رنگ متن به سفید */
+							}
+						</style>
+						<script>
+							function updateDateTime() {
+								var now = new Date();
+								var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+								var persianDate = now.toLocaleDateString('fa-IR');
+								var time = now.toLocaleTimeString('en');
+								
+								document.getElementById('datetime').innerHTML = persianDate + ' ' + time;
+							}
+							
+							setInterval(updateDateTime, 1000);
+						</script>
+					</head>
+					<body onload="updateDateTime()">
